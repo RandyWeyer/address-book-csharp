@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+
+
+<h1>To Do List</h1>
+<ul>
+  @foreach (var item in Model)
+  {
+    <li><a href='/address/@address.GetId()'>@item.GetDescription()</a></li>
+  }
+</ul>
+<a href='/contact/new'>Add new item</a>

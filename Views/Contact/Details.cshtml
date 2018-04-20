@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Here are all the addresses for this contact:</h3>
+<ol>
+  @foreach (var address in @Model["address"])
+  {
+    <li><a href='/contact/@Model["contact"].GetId()/address/@address.GetId()'>@address.GetDescription()</a></li>
+  }
+</ol>
+<p><a href='/contact/@Model["contact"].GetId()/address/new'>Add a new Address</a></p>
