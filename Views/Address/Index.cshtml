@@ -2,13 +2,15 @@
   Layout = "_Layout";
 }
 
-
-
-<h1>To Do List</h1>
 <ul>
   @foreach (var item in Model)
   {
-    <li><a href='/address/@address.GetId()'>@item.GetDescription()</a></li>
+    <li>@item.GetStreet()</li>
+    <li>@item.GetCity() @item.GetState() @item.GetZipcode()
+      <li>
+      @Html.ActionLink("Update", "Update", new { id=@item.GetId() })
+      @Html.ActionLink("Delete", "Delete", new { id=@item.GetId() })
+      </li>
+    </li>
   }
 </ul>
-<a href='/contact/new'>Add new item</a>

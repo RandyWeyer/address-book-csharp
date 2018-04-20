@@ -44,12 +44,19 @@ namespace AddressBook.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Contact foundContact = Contact.Find(Int32.Parse(Request.Form["Contact-id"]));
-      string addressDescription = Request.Form["address-description"];
-      Address newAddress = new Address(addressDescription);
+
+      string addressStreet = Request.Form["street"];
+      string addressCity = Request.Form["city"];
+      string addressState = Request.Form["state"];
+      string addressZipcode = Request.Form["zipcode"];
+
+      Address newAddress = new Address(addressStreet, addressCity, addressState, addressZipcode);
       foundContact.AddAddress(newAddress);
       List<Address> contactAddress = foundContact.GetAddress();
+
       model.Add("address", contactAddress);
       model.Add("contact", foundContact);
+
       return View("Details", model);
     }
   }

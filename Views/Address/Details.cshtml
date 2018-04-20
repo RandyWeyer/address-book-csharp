@@ -2,5 +2,10 @@
   Layout = "_Layout";
 }
 
-
-<h1>@Model.GetDescription()</h1>
+<li>@Model.GetStreet()</li>
+<li>@Model.GetCity() @Model.GetState() @Model.GetZipcode()
+  <li>
+  @Html.ActionLink("Update", "Update", new { id=@Model.GetId() })
+  @Html.ActionLink("Delete", "Delete", new { id=@Model.GetId() })
+  </li>
+</li>

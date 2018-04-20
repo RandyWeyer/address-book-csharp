@@ -6,7 +6,7 @@
 <ol>
   @foreach (var address in @Model["address"])
   {
-    <li><a href='/contact/@Model["contact"].GetId()/address/@address.GetId()'>@address.GetDescription()</a></li>
+    <li><a href='/contact/@Model["contact"].GetId()/address/@address.GetId()'>@address.GetCity()</a></li>
   }
 </ol>
 <p><a href='/contact/@Model["contact"].GetId()/address/new'>Add a new Address</a></p>

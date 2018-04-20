@@ -5,25 +5,55 @@ namespace AddressBook.Models
 {
   public class Address
   {
-    private string _description;
+    private string _street;
+    private string _city;
+    private string _state;
+    private string _zipcode;
     private int _id;
     private static List<Address> _instances = new List<Address>{};
     public static int addressCounter;
 
-    public Address (string description)
+    public Address (string street, string city, string state, string zipcode)
     {
-      _description = description;
+      _street = street;
+      _city = city;
+      _state = state;
+      _zipcode = zipcode;
       _instances.Add(this);
       _id = addressCounter;
       addressCounter++;
     }
-    public string GetDescription()
+    public string GetStreet()
     {
-      return _description;
+      return _street;
     }
-    public void SetDescription(string newDescription)
+    public void SetStreet(string newStreet)
     {
-      _description = newDescription;
+      _street = newStreet;
+    }
+    public string GetCity()
+    {
+      return _city;
+    }
+    public void SetCity(string newCity)
+    {
+      _city = newCity;
+    }
+    public string GetState()
+    {
+      return _state;
+    }
+    public void SetState(string newState)
+    {
+      _state = newState;
+    }
+    public string GetZipcode()
+    {
+      return _zipcode;
+    }
+    public void SetZipcode(string newZipcode)
+    {
+      _zipcode = newZipcode;
     }
     public int GetId()
     {
